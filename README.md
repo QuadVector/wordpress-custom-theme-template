@@ -10,8 +10,8 @@ This WordPress theme template is designed for creating custom themes from scratc
 
 - **Empty Enqueued Files**: Comes with empty `main.js` and `main.css` files that are ready for your custom scripts and styles.
 
-**Warning**
-Please pay attention: this template includes ONLY basic page files (index.php, template-full-width.php, front-page.php and 404.php). If you want to create an archive or single pages you need to create them by own. (You can read the Wordpress documentation here - https://wordpress.org/documentation/). Also included pages have only basic markup for demonstration purpose. You need to edit it for your own purposes.
+> [!IMPORTANT]  
+> This template includes ONLY basic page files (index.php, template-full-width.php, front-page.php and 404.php). If you want to create an archive or single pages you need to create them by own. (You can read the Wordpress documentation here - https://wordpress.org/documentation/). Also included pages have only basic markup for demonstration purpose. You need to edit it for your own purposes.
 
 ## Getting Started
 
