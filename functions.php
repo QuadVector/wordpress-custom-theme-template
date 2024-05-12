@@ -12,4 +12,8 @@ add_action("init", function () {
     register_nav_menus(array(
         "primary" => __("Primary Menu"),
     ));
+
+    add_action("after_setup_theme", function() {
+        require_once get_template_directory() . "/inc/class-wp-bootstrap-navwalker.php";
+    });
 });
