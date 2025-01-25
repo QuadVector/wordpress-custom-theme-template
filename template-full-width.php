@@ -1,6 +1,6 @@
 <?php
 /*
-Template Name: Without container
+Template Name: Full width
 Template Post Type: page
 */
 
