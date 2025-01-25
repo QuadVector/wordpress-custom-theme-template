@@ -1,4 +1,6 @@
 <?php
+require_once get_template_directory() . "/inc/class-wp-bootstrap-navwalker.php";
+
 add_action("init", function () {
     if (!is_admin() && $GLOBALS["pagenow"] != "wp-login.php") {
         wp_enqueue_style("style-bootstrap", get_stylesheet_directory_uri() . "/css/bootstrap.min.css");
@@ -12,8 +14,4 @@ add_action("init", function () {
     register_nav_menus(array(
         "primary" => __("Primary Menu"),
     ));
-
-    add_action("after_setup_theme", function() {
-        require_once get_template_directory() . "/inc/class-wp-bootstrap-navwalker.php";
-    });
 });
