@@ -1,0 +1,17 @@
+{
+    "name": "quadvector/wordpress-custom-theme-template",
+    "description": "custom-theme.ru wordpress theme",
+    "type": "project",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "QuadVector\\CustomTheme\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "QuadVector"
+        }
+    ],
+    "minimum-stability": "stable"
+}

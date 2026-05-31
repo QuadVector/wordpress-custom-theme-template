@@ -1,5 +1,7 @@
 <?php
 
+namespace QuadVector\CustomTheme\Navwalkers;
+
 /**
  * WP Bootstrap Navwalker
  *
@@ -19,11 +21,11 @@
  */
 
 // Check if Class Exists.
-if (!class_exists('WP_Bootstrap_Navwalker')) :
+if (!class_exists('Bootstrap5Navwalker')) :
     /**
-     * WP_Bootstrap_Navwalker class.
+     * Bootstrap5Navwalker class.
      */
-    class WP_Bootstrap_Navwalker extends Walker_Nav_Menu
+    class Bootstrap5Navwalker extends \Walker_Nav_Menu
     {
 
         /**
@@ -55,7 +57,7 @@ if (!class_exists('WP_Bootstrap_Navwalker')) :
          *
          * @param string           $output Used to append additional content (passed by reference).
          * @param int              $depth  Depth of menu item. Used for padding.
-         * @param WP_Nav_Menu_Args $args   An object of wp_nav_menu() arguments.
+         * @param \WP_Nav_Menu_Args $args   An object of wp_nav_menu() arguments.
          */
         public function start_lvl(&$output, $depth = 0, $args = null)
         {
@@ -75,7 +77,7 @@ if (!class_exists('WP_Bootstrap_Navwalker')) :
              * @since WP 4.8.0
              *
              * @param array    $classes The CSS classes that are applied to the menu `<ul>` element.
-             * @param stdClass $args    An object of `wp_nav_menu()` arguments.
+             * @param \stdClass $args    An object of `wp_nav_menu()` arguments.
              * @param int      $depth   Depth of menu item. Used for padding.
              */
             $class_names = join(' ', apply_filters('nav_menu_submenu_css_class', $classes, $args, $depth));
@@ -108,9 +110,9 @@ if (!class_exists('WP_Bootstrap_Navwalker')) :
          * @see Walker_Nav_Menu::start_el()
          *
          * @param string           $output Used to append additional content (passed by reference).
-         * @param WP_Nav_Menu_Item $item   Menu item data object.
+         * @param \WP_Nav_Menu_Item $item   Menu item data object.
          * @param int              $depth  Depth of menu item. Used for padding.
-         * @param WP_Nav_Menu_Args $args   An object of wp_nav_menu() arguments.
+         * @param \WP_Nav_Menu_Args $args   An object of wp_nav_menu() arguments.
          * @param int              $id     Current item ID.
          */
         public function start_el(&$output, $item, $depth = 0, $args = null, $id = 0)
@@ -162,11 +164,11 @@ if (!class_exists('WP_Bootstrap_Navwalker')) :
              *
              * @since WP 4.4.0
              *
-             * @param WP_Nav_Menu_Args $args  An object of wp_nav_menu() arguments.
-             * @param WP_Nav_Menu_Item $item  Menu item data object.
+             * @param \WP_Nav_Menu_Args $args  An object of wp_nav_menu() arguments.
+             * @param \WP_Nav_Menu_Item $item  Menu item data object.
              * @param int              $depth Depth of menu item. Used for padding.
              *
-             * @var WP_Nav_Menu_Args
+             * @var \WP_Nav_Menu_Args
              */
             $args = apply_filters('nav_menu_item_args', $args, $item, $depth);
 
@@ -196,8 +198,8 @@ if (!class_exists('WP_Bootstrap_Navwalker')) :
              * @since WP 4.1.0 The `$depth` parameter was added.
              *
              * @param string           $menu_id The ID that is applied to the menu item's `<li>` element.
-             * @param WP_Nav_Menu_Item $item    The current menu item.
-             * @param WP_Nav_Menu_Args $args    An object of wp_nav_menu() arguments.
+             * @param \WP_Nav_Menu_Item $item    The current menu item.
+             * @param \WP_Nav_Menu_Args $args    An object of wp_nav_menu() arguments.
              * @param int              $depth   Depth of menu item. Used for padding.
              */
             $id = apply_filters('nav_menu_item_id', 'menu-item-' . $item->ID, $item, $args, $depth);
@@ -291,8 +293,8 @@ if (!class_exists('WP_Bootstrap_Navwalker')) :
              * @since WP 4.4.0
              *
              * @param string           $title The menu item's title.
-             * @param WP_Nav_Menu_Item $item  The current menu item.
-             * @param WP_Nav_Menu_Args $args  An object of wp_nav_menu() arguments.
+             * @param \WP_Nav_Menu_Item $item  The current menu item.
+             * @param \WP_Nav_Menu_Args $args  An object of wp_nav_menu() arguments.
              * @param int              $depth Depth of menu item. Used for padding.
              */
             $title = apply_filters('nav_menu_item_title', $title, $item, $args, $depth);
@@ -371,7 +373,7 @@ if (!class_exists('WP_Bootstrap_Navwalker')) :
             $class            = $args['menu_class'] ? ' class="menu-fallback-menu ' . esc_attr($args['menu_class']) . '"' : ' class="menu-fallback-menu"';
             $id               = $args['menu_id'] ? ' id="' . esc_attr($args['menu_id']) . '"' : '';
             $fallback_output .= '<ul' . $id . $class . '>';
-            $fallback_output .= '<li class="nav-item"><a href="' . esc_url(admin_url('nav-menus.php')) . '" class="nav-link" title="' . esc_attr__('Add a menu', 'wp-bootstrap-navwalker') . '">' . esc_html__('Add a menu', 'wp-bootstrap-navwalker') . '</a></li>';
+            $fallback_output .= '<li class="nav-item"><a href="' . esc_url(admin_url('nav-menus.php')) . '" class="nav-link" title="' . esc_attr__('Add a menu', 'wordpress-custom-theme') . '">' . esc_html__('Add a menu', 'wordpress-custom-theme') . '</a></li>';
             $fallback_output .= '</ul>';
 
             // Menu container closing tag.

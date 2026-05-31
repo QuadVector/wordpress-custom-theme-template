@@ -1,17 +1,16 @@
 <?php
-require_once get_template_directory() . "/inc/class-wp-bootstrap-navwalker.php";
 
-add_action("init", function () {
-    if (!is_admin() && $GLOBALS["pagenow"] != "wp-login.php") {
-        wp_enqueue_style("style-bootstrap", get_stylesheet_directory_uri() . "/css/bootstrap.min.css");
-        wp_enqueue_style("style-main", get_stylesheet_directory_uri() . "/css/main.css");
+// constants
+define("QV_TEMPLATE_DIRECTORY", get_template_directory());
+define("QV_TEMPLATE_DIRECTORY_URI", get_template_directory_uri());
+define("QV_STYLESHEET_DIRECTORY_URI", get_stylesheet_directory_uri());
+define("QV_STYLESHEET_DIRECTORY", get_stylesheet_directory());
+define("QV_HOME_URL", home_url("/"));
+define("QV_HOME_PAGE_ID", get_option("page_on_front"));
+define("QV_SITE_NAME", get_bloginfo("name"));
 
-        wp_enqueue_script("jquery");
-        wp_enqueue_script("script-bootstrap", get_stylesheet_directory_uri() . "/js/bootstrap.min.js", 100);
-        wp_enqueue_script("script-main", get_stylesheet_directory_uri() . "/js/main.js", 100);
-    }
+// composer autoloader
+require_once(QV_TEMPLATE_DIRECTORY . "/vendor/autoload.php");
 
-    register_nav_menus(array(
-        "primary" => __("Primary Menu"),
-    ));
-});
+// main init
+\QuadVector\CustomTheme\Theme::init();

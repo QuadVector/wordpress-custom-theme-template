@@ -7,7 +7,9 @@ get_header();
 </h1>
 
 <div class="container">
-	<h1>ERROR 404</h1>
+	<h1>
+		<?php echo __("ERROR 404", "wordpress-custom-theme"); ?>
+	</h1>
 </div>
 
 <?php
