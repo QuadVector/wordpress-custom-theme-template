@@ -8,9 +8,9 @@
         <link rel="pingback" href="<?php bloginfo('pingback_url'); ?>">
     <?php endif; ?>
     <?php wp_head(); ?>
-    <title><?= wp_title() ?></title>
+    <title><?php echo wp_title() ?></title>
 </head>
 
 <body <?php echo body_class(); ?>>
     <?php wp_body_open(); ?>
-    <?php echo get_template_part("template-parts/header-menu"); ?>
+    <?php echo get_template_part("template-parts/layout/header"); ?>
