@@ -105,8 +105,8 @@ final class Theme
 
 		// Admin assets
 		add_action('admin_enqueue_scripts', static function (): void {
-			$uri = QV_TEMPLATE_DIRECTORY_URI;
-			$dir = QV_TEMPLATE_DIRECTORY;
+			$uri = QV_STYLESHEET_DIRECTORY_URI;
+			$dir = QV_STYLESHEET_DIRECTORY;
 
 			// styles
 			wp_enqueue_style(
