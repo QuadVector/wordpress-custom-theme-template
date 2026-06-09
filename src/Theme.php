@@ -17,10 +17,6 @@ final class Theme
 			self::enqueueAssets();
 		});
 
-		add_action("acf/init", static function (): void {
-			self::initOptionsPage();
-		});
-
 		add_filter("get_the_archive_title", function ($title) {
 			return self::processArchiveTitle($title);
 		});
@@ -71,8 +67,8 @@ final class Theme
 	{
 		// Frontend assets
 		add_action('wp_enqueue_scripts', static function (): void {
-			$uri = QV_TEMPLATE_DIRECTORY_URI;
-			$dir = QV_TEMPLATE_DIRECTORY;
+			$uri = QV_STYLESHEET_DIRECTORY_URI;
+			$dir = QV_STYLESHEET_DIRECTORY;
 
 			// styles
 			wp_enqueue_style(

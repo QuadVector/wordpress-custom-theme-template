@@ -2,7 +2,7 @@
 
 namespace QuadVector\CustomTheme\Helpers;
 
-final class Text
+final class CURL
 {
 	/**
 	 * Get contents from URL via CURL
